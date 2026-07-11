@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>للتبريد والتكييف | أفضل الخبراء في الرياض</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0076a3;
+            --secondary-color: #25d366;
+            --dark-color: #333;
+            --light-color: #f4f9fc;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        .top-bar .social-icons i {
+            margin: 0 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Header & Nav */
+        header {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--dark-color);
+            margin: 0 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #1ebd54;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light-color);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .services h2 {
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card i {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .service-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contact & Form Section */
+        .contact {
+            padding: 60px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #99px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; text-align: center; gap: 10px; }
+            .nav-container { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div><i class="fas fa-bolt"></i> خدمة سريعة • أسعار تنافسية • ضمان على الخدمة</div>
+        <div class="social-icons">
+            <a href="https://wa.me/9660503840121" style="color:white;"><i class="fab fa-whatsapp"></i></a>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-x-twitter"></i>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">التكييف والتبريد</div>
+            <nav>
+                <a href="#home">الرئيسية</a>
+                <a href="#about">من نحن</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#contact">اتصل بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>أفضل الخبراء في الرياض</h1>
+        <p>إصلاح فوري للأجهزة المنزلية مع ضمان معتمد</p>
+        <a href="tel:+9660503840121" class="btn"><i class="fas fa-phone-alt"></i> اتصل بنا الآن</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>من نحن</h2>
+        <p><strong>خبراؤك الموثوقون في خدمات التكييف والتبريد:</strong> نحن متخصصون في إصلاح وصيانة وتركيب أنظمة التكييف والتبريد بالرياض. نلتزم بجودة العمل، والخدمة الموثوقة، ورضا العملاء، ونقدم حلولاً فعّالة لضمان عمل أنظمة التبريد بأفضل كفاءة ممكنة.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>خدماتنا (حلول موثوقة للتبريد والإصلاح)</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <i class="fas fa-snowflake"></i>
+                <h3>إصلاح أجهزة التكييف</h3>
+                <p>خدمات احترافية للإصلاح والصيانة لمكيفات السبليت والشباك لضمان تبريد فعّال وكفاءة عالية.</p>
+                <a href="https://wa.me/9660503840121">تواصل معنا</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-blender"></i>
+                <h3>إصلاح الثلاجات</h3>
+                <p>خدمات سريعة وفعّالة لإصلاح الثلاجات للحفاظ على طعامك طازجًا وضمان عمل الجهاز بكفاءة عالية.</p>
+                <a href="https://wa.me/9660503840121">تواصل معنا</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>إصلاح الغسالات</h3>
+                <p>حلول موثوقة لجميع أنواع مشاكل الغسالات، لاستعادة التشغيل السلس والخالي من الأعطال.</p>
+                <a href="https://wa.me/9660503840121">تواصل معنا</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-wind"></i>
+                <h3>إصلاح المكانس الكهربائية</h3>
+                <p>خدمات إصلاح احترافية لتحسين قوة الشفط والحفاظ على أداء المكنسة الكهربائية بأفضل كفاءة.</p>
+                <a href="https://wa.me/9660503840121">تواصل معنا</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-temperature-high"></i>
+                <h3>إصلاح سخانات المياه</h3>
+                <p>خدمات شاملة للإصلاح والصيانة لسخانات المياه، لضمان توفير مستمر للمياه الساخنة.</p>
+                <a href="https://wa.me/9660503840121">تواصل معنا</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-fire-alt"></i>
+                <h3>إصلاح الأفران</h3>
+                <p>خدمات احترافية لإصلاح الأفران لمعالجة مشاكل التسخين والأداء، لضمان طهي آمن وموثوق.</p>
+                <a href="https://wa.me/9660503840121">تواصل معنا</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>هل لديك أسئلة؟ اتصل بنا</h2>
+        <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح!');">
+            <div class="form-group">
+                <label>الاسم</label>
+                <input type="text" required placeholder="أدخل اسمك">
+            </div>
+            <div class="form-group">
+                <label>رقم الجوال</label>
+                <input type="tel" required placeholder="أدخل رقم الجوال">
+            </div>
+            <div class="form-group">
+                <label>الموضوع</label>
+                <textarea rows="4" placeholder="أدخل موضوعك أو رسالتك"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">إرسال</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 التكييف والتبريد. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/9660503840121" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
