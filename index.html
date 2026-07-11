@@ -111,8 +111,8 @@
         /* Hero Banner */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.95)), 
-                        url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.95)), 
+                        url('https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             padding: 120px 20px 100px;
             text-align: center;
         }
@@ -214,13 +214,28 @@
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.05);
             text-align: right;
+            display: flex;
+            flex-direction: column;
         }
         .service-card:hover { transform: translateY(-10px); border-color: var(--ice-blue); }
         
-        .img-box { height: 220px; width: 100%; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        /* Fixed & Robust Image Container Fix */
+        .img-box { 
+            height: 220px; 
+            width: 100%; 
+            background-color: #111827; /* Fallback Solid Color */
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+        .img-box img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
         
-        .info-box { padding: 25px; }
+        .info-box { padding: 25px; flex-grow: 1; }
         .info-box i { font-size: 30px; color: var(--ice-blue); margin-bottom: 15px; display: inline-block; }
         .info-box h3 { font-size: 22px; margin-bottom: 12px; font-weight: 700; }
         .info-box p { color: var(--text-muted); font-size: 15px; }
@@ -295,7 +310,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: Purchase of Old / Scrap Air Conditioners -->
+    <!-- Dedicated Buying Section for Old / Scrap Air Conditioners -->
     <section class="buying-section" id="buying">
         <h2 id="buy-title">نشتري المكيفات القديمة والمستعملة (سكراب)</h2>
         <p id="buy-desc">هل لديك مكيف قديم، عطلان، أو ترغب في استبداله؟ نحن نشتري جميع أنواع المكيفات السكراب والمستعملة (سبليت - شباك - دولابي) من أي مكان في الدمام والمنطقة الشرقية بأعلى أسعار السوق مع خدمة الفك والنقل مجاناً.</p>
@@ -319,7 +334,7 @@
             <!-- Service 1: AC Washing & Maintenance -->
             <div class="service-card">
                 <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="AC Repair and Washing">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80" alt="AC Repair and Washing">
                 </div>
                 <div class="info-box">
                     <i class="fas fa-snowflake"></i>
@@ -331,7 +346,7 @@
             <!-- Service 2: Smart Washing Machines -->
             <div class="service-card">
                 <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1545173168-9f18c845197a?auto=format&fit=crop&w=600&q=80" alt="Washing Machine Repair">
+                    <img src="https://images.unsplash.com/photo-1545173168-9f18c845197a?auto=format&fit=crop&w=500&q=80" alt="Washing Machine Repair">
                 </div>
                 <div class="info-box">
                     <i class="fas fa-rotate"></i>
@@ -343,7 +358,7 @@
             <!-- Service 3: AC Technical Inspections -->
             <div class="service-card">
                 <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&w=600&q=80" alt="AC Troubleshooting">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80" alt="AC Troubleshooting">
                 </div>
                 <div class="info-box">
                     <i class="fas fa-temperature-arrow-down"></i>
@@ -371,6 +386,9 @@
                 <div class="input-group">
                     <label id="l-msg">حدد الخدمة المطلوبة (صيانة مكيف / غسالة / بيع مكيف مستعمل)</label>
                     <textarea rows="4" required></textarea>
+                </div>
+                <div class="input-group" style="display:none;">
+                    <input type="hidden" name="date" value="2026-07-11">
                 </div>
                 <button type="submit" class="btn-submit" id="f-btn">إرسال الطلب فوراً</button>
             </form>
