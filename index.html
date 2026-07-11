@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>للتكييف والتبريد | AC & Refrigeration Services Dammam</title>
-    <!-- Google Fonts for premium typography -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Premium Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -16,7 +16,6 @@
             --dark-gray: #1e293b;
             --light-bg: #f8fafc;
             --whatsapp-green: #25d366;
-            --call-orange: #ff6b6b;
         }
 
         * {
@@ -24,6 +23,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Cairo', 'Poppins', sans-serif;
+            transition: all 0.3s ease;
         }
 
         body {
@@ -32,7 +32,7 @@
             line-height: 1.6;
         }
 
-        /* Direct Contact Top Bar */
+        /* Top Bar & Header */
         .top-action-bar {
             background: #ffffff;
             padding: 12px 15px;
@@ -45,11 +45,17 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
+        .brand-area {
+            text-align: right;
+        }
+        html[lang="en"] .brand-area {
+            text-align: left;
+        }
+
         .brand-title {
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary-blue);
-            text-align: right;
         }
 
         .brand-subtitle {
@@ -61,6 +67,27 @@
         .quick-actions {
             display: flex;
             gap: 10px;
+            align-items: center;
+        }
+
+        /* Premium Language Switcher Button */
+        .lang-switch-btn {
+            background: var(--dark-gray);
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .lang-switch-btn:hover {
+            background: var(--primary-blue);
         }
 
         .btn-action {
@@ -74,17 +101,12 @@
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: transform 0.2s;
-        }
-
-        .btn-action:active {
-            transform: scale(0.95);
         }
 
         .btn-whatsapp { background-color: var(--whatsapp-green); }
         .btn-call { background-color: var(--primary-blue); }
 
-        /* Hero Banner Section */
+        /* Hero Banner */
         .hero {
             background: linear-gradient(rgba(0, 40, 85, 0.75), rgba(0, 40, 85, 0.75)), url('https://cdn.phototourl.com/free/2026-07-11-85f3e2eb-714e-4d97-a939-5de53fe07bf7.jpg');
             background-size: cover;
@@ -117,17 +139,7 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Language Divider Notice */
-        .lang-badge {
-            background: var(--dark-gray);
-            color: white;
-            text-align: center;
-            padding: 5px;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-        }
-
-        /* Services Layout Grid */
+        /* Services Grid */
         .section-title {
             text-align: center;
             margin: 40px 20px 20px;
@@ -176,21 +188,6 @@
             padding: 20px;
         }
 
-        .service-lang-block {
-            margin-bottom: 15px;
-        }
-
-        .service-lang-block.ur-ar {
-            text-align: right;
-            border-bottom: 1px dashed #e2e8f0;
-            padding-bottom: 12px;
-        }
-
-        .service-lang-block.en {
-            text-align: left;
-            padding-top: 8px;
-        }
-
         .service-title {
             font-size: 1.25rem;
             font-weight: 700;
@@ -203,7 +200,15 @@
             color: #475569;
         }
 
-        /* Quick Floating Footer Bar for Mobile */
+        /* Language Toggle Dynamic Visibility */
+        html[lang="ar"] .en-text { display: none !important; }
+        html[lang="en"] .ar-text { display: none !important; }
+        
+        /* RTL Direction handling automatically */
+        html[lang="ar"] { direction: rtl; }
+        html[lang="ar"] .top-action-bar { flex-direction: row-reverse; }
+
+        /* Sticky Footer Mobile */
         .sticky-footer-action {
             position: fixed;
             bottom: 0;
@@ -225,73 +230,79 @@
             padding: 14px;
         }
 
-        /* Footer Info */
         footer {
             background: var(--dark-gray);
             color: #94a3b8;
             text-align: center;
-            padding: 30px 20px 100px; /* space for sticky footer */
+            padding: 30px 20px 100px;
             font-size: 0.9rem;
         }
 
-        footer p {
-            margin-bottom: 8px;
-        }
-
-        /* Desktop Optimization (if opened on PC) */
         @media (min-width: 768px) {
             .services-container {
                 max-width: 1100px;
                 grid-template-columns: repeat(3, 1fr);
             }
             .hero h1 { font-size: 3.5rem; }
-            .top-action-bar { padding: 15px 10%px; }
         }
     </style>
 </head>
-<body>
+<body class="rtl-init">
 
-    <!-- Direct Contact Front Top Bar -->
+    <!-- Top Action Bar -->
     <div class="top-action-bar">
+        <!-- Quick Call/Whatsapp & Language Switcher in corner -->
         <div class="quick-actions">
+            <button class="lang-switch-btn" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i> <span id="lang-btn-text">English</span>
+            </button>
             <a href="https://wa.me/9660581366908" class="btn-action btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="tel:+9660581366908" class="btn-action btn-call">
-                <i class="fas fa-phone-alt"></i> Call
+                <i class="fab fa-whatsapp"></i> <span class="ar-text">واتساب</span><span class="en-text">WhatsApp</span>
             </a>
         </div>
-        <div>
-            <div class="brand-title">للتكييف والتبريد</div>
-            <span class="brand-subtitle">AC & Repair Services</span>
+        
+        <div class="brand-area">
+            <div class="brand-title ar-text">للتكييف والتبريد</div>
+            <div class="brand-title en-text">AC & Refrigeration</div>
+            <span class="brand-subtitle ar-text">خدمات صيانة وإصلاح</span>
+            <span class="brand-subtitle en-text">Professional Repair Services</span>
         </div>
     </div>
 
-    <!-- Hero Front Section -->
+    <!-- Hero Section -->
     <div class="hero">
-        <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Dammam / الدمام</span>
-        <h1 style="margin-top: 15px;">Advanced Cooling Solutions</h1>
-        <p>تكييف وتبريد وصيانة غسالات بأعلى جودة</p>
-        <div style="font-size: 0.9rem; opacity: 0.8;">Urdu • English • العربية</div>
+        <span class="location-tag">
+            <i class="fas fa-map-marker-alt"></i> 
+            <span class="ar-text">الدمام، المملكة العربية السعودية</span>
+            <span class="en-text">Dammam, Saudi Arabia</span>
+        </span>
+        
+        <h1 class="ar-text" style="margin-top: 15px;">خدمات التكييف والتبريد المتقدمة</h1>
+        <h1 class="en-text" style="margin-top: 15px;">Advanced Cooling Solutions</h1>
+        
+        <p class="ar-text">تکییف، تبريد، اور واشنگ مشین کی بہترین صيانة بأعلى جودة</p>
+        <p class="en-text">Top-quality AC maintenance, gas filling & washing machine repairs</p>
     </div>
 
-    <div class="lang-badge">🇸🇦 SERVING ALL OVER DAMMAM & SURROUNDINGS 🇸🇦</div>
-
-    <!-- Services Section -->
-    <h2 class="section-title">Our Services / ہماری خدمات</h2>
+    <!-- Section Title -->
+    <h2 class="section-title">
+        <span class="ar-text">خدماتنا المحترفة</span>
+        <span class="en-text">Our Professional Services</span>
+    </h2>
     
+    <!-- Services Container -->
     <div class="services-container">
 
-        <!-- Card 1: AC Repair & Services -->
+        <!-- Card 1: AC Repair -->
         <div class="service-card">
-            <img src="https://cdn.phototourl.com/free/2026-07-11-55677bfb-6cd1-4fac-a113-c706904740b7.jpg" alt="AC Repair Services">
+            <img src="https://cdn.phototourl.com/free/2026-07-11-55677bfb-6cd1-4fac-a113-c706904740b7.jpg" alt="AC Repair">
             <div class="service-content">
-                <div class="service-lang-block ur-ar">
+                <div class="ar-text">
                     <h3 class="service-title">اے سی کی مرمت اور سروس</h3>
                     <p class="service-desc">ہر قسم کے ونڈو اور اسپلٹ اے سی کی بہترین سروس، گیس چارجنگ اور مرمت کا کام تسلی بخش کیا جاتا ہے۔</p>
                 </div>
-                <div class="service-lang-block en">
-                    <h3 class="service-title">AC Repair & Maintenance</h3>
+                <div class="en-text">
+                    <h3 class="service-title">AC Repair & Service</h3>
                     <p class="service-desc">Professional fixing, deep cleaning, gas refilling, and troubleshooting for Split and Window AC units.</p>
                 </div>
             </div>
@@ -299,13 +310,13 @@
 
         <!-- Card 2: Washing Machine -->
         <div class="service-card">
-            <img src="https://cdn.phototourl.com/free/2026-07-11-91810011-c55c-47ea-badf-a43feb624e48.jpg" alt="Washing Machine Repair">
+            <img src="https://cdn.phototourl.com/free/2026-07-11-91810011-c55c-47ea-badf-a43feb624e48.jpg" alt="Washing Machine">
             <div class="service-content">
-                <div class="service-lang-block ur-ar">
+                <div class="ar-text">
                     <h3 class="service-title">واشنگ مشین کی مرمت</h3>
                     <p class="service-desc">آٹومیٹک اور نارمل واشنگ مشینوں کی فوری سروس اور ہر قسم کے فالٹ درست کرنا۔</p>
                 </div>
-                <div class="service-lang-block en">
+                <div class="en-text">
                     <h3 class="service-title">Washing Machine Repair</h3>
                     <p class="service-desc">Expert repairing solutions for all brands of automatic and semi-automatic washing machines.</p>
                 </div>
@@ -314,13 +325,13 @@
 
         <!-- Card 3: Old AC Purchase -->
         <div class="service-card">
-            <img src="https://cdn.phototourl.com/free/2026-07-11-23b4fe3c-0e38-4493-8a15-6a4ec3978757.jpg" alt="Old Air Conditioner Purchase">
+            <img src="https://cdn.phototourl.com/free/2026-07-11-23b4fe3c-0e38-4493-8a15-6a4ec3978757.jpg" alt="Old AC">
             <div class="service-content">
-                <div class="service-lang-block ur-ar">
+                <div class="ar-text">
                     <h3 class="service-title">پرانے اے سی کی خرید و فروخت</h3>
                     <p class="service-desc">ہم پرانے اور ناکارہ ائیر کنڈیشنر بہترین قیمت پر خریدتے ہیں۔ ابھی رابطہ کریں۔</p>
                 </div>
-                <div class="service-lang-block en">
+                <div class="en-text">
                     <h3 class="service-title">We Buy Old AC Units</h3>
                     <p class="service-desc">Want to sell your used or faulty air conditioners? We offer the best competitive prices in Dammam.</p>
                 </div>
@@ -329,24 +340,45 @@
 
     </div>
 
-    <!-- Bottom Sticky Mobile Action Bar -->
+    <!-- Bottom Sticky Actions -->
     <div class="sticky-footer-action">
         <a href="tel:+9660581366908" class="btn-action btn-call">
-            <i class="fas fa-phone-alt"></i> Call Now
+            <i class="fas fa-phone-alt"></i> <span class="ar-text">اتصل الآن</span><span class="en-text">Call Now</span>
         </a>
         <a href="https://wa.me/9660581366908" class="btn-action btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
+            <i class="fab fa-whatsapp"></i> <span class="ar-text">واتساب</span><span class="en-text">WhatsApp</span>
         </a>
     </div>
 
-    <!-- Footer Content -->
+    <!-- Footer -->
     <footer>
-        <p style="color: white; font-weight: bold; font-size: 1.1rem;">للتكييف والتبريد</p>
-        <p><i class="fas fa-map-marker-alt"></i> Dammam, Eastern Province, Saudi Arabia</p>
+        <p style="color: white; font-weight: bold; font-size: 1.1rem;" class="ar-text">للتكييف والتبريد</p>
+        <p style="color: white; font-weight: bold; font-size: 1.1rem;" class="en-text">AC & Refrigeration Services</p>
+        <p><i class="fas fa-map-marker-alt"></i> Dammam, Saudi Arabia</p>
         <p><i class="fas fa-phone"></i> +966 0581 366 908</p>
         <hr style="border: 0; border-top: 1px solid #334155; margin: 15px 0;">
-        <p style="font-size: 0.8rem;">&copy; 2026 All Rights Reserved. Professional AC Services.</p>
+        <p style="font-size: 0.8rem;">&copy; 2026 All Rights Reserved.</p>
     </footer>
 
+    <!-- JavaScript to Handle Language Switch Dynamically -->
+    <script>
+        // Set Default Language to Arabic/Urdu (RTL)
+        document.documentElement.setAttribute('lang', 'ar');
+
+        function toggleLanguage() {
+            const htmlTag = document.documentElement;
+            const langBtnText = document.getElementById('lang-btn-text');
+            
+            if (htmlTag.getAttribute('lang') === 'ar') {
+                // Switch to English
+                htmlTag.setAttribute('lang', 'en');
+                langBtnText.textContent = 'العربية';
+            } else {
+                // Switch to Arabic
+                htmlTag.setAttribute('lang', 'ar');
+                langBtnText.textContent = 'English';
+            }
+        }
+    </script>
 </body>
 </html>
