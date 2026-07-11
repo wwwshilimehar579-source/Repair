@@ -3,82 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="site-title">للتبريد والتكييف | عالم الصيانة الاحترافية بالدمام</title>
-    <!-- FontAwesome for Premium Icons -->
+    <title id="site-title">شركة صيانة مكيفات وغسالات بالدمام | شراء المكيفات المستعملة</title>
+    <!-- FontAwesome for Pro Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts for Cinematic Typography -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --cinematic-dark: #0b132b;
-            --cinematic-blue: #1c2541;
-            --ice-cyan: #48cae4;
-            --neon-blue: #00b4d8;
-            --warm-gold: #ffb703;
-            --whatsapp-green: #25d366;
+            --main-dark: #0f172a;
+            --card-bg: #1e293b;
+            --ice-blue: #38bdf8;
+            --neon-blue: #0284c7;
+            --gold-accent: #f59e0b;
+            --whatsapp-color: #22c55e;
             --pure-white: #ffffff;
-            --text-gray: #94a3b8;
+            --text-muted: #94a3b8;
         }
         
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', 'Segoe UI', sans-serif;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
         }
 
         body {
-            background-color: var(--cinematic-dark);
+            background-color: var(--main-dark);
             color: var(--pure-white);
-            line-height: 1.8;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Cinematic Overlay Effects & Top Bar */
+        /* Top Notification Bar */
         .top-bar {
-            background: linear-gradient(90deg, #0b132b, #1c2541);
-            color: var(--pure-white);
-            padding: 12px 20px;
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 14px;
-            border-bottom: 2px solid rgba(72, 202, 228, 0.2);
-            box-shadow: 0 0 20px rgba(0, 180, 216, 0.1);
+            border-bottom: 2px solid rgba(56, 189, 248, 0.2);
         }
         
-        .badge-premium {
-            background: linear-gradient(45deg, var(--warm-gold), #ed8936);
+        .badge-buy {
+            background: linear-gradient(45deg, var(--gold-accent), #d97706);
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: bold;
-            animation: pulse 2s infinite;
+            color: #000;
         }
 
         .lang-btn {
             background: transparent;
-            color: var(--ice-cyan);
-            border: 2px solid var(--ice-cyan);
-            padding: 6px 18px;
+            color: var(--ice-blue);
+            border: 2px solid var(--ice-blue);
+            padding: 4px 15px;
             cursor: pointer;
-            border-radius: 30px;
+            border-radius: 20px;
             font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
         }
         .lang-btn:hover {
-            background: var(--ice-cyan);
-            color: var(--cinematic-dark);
-            box-shadow: 0 0 15px var(--ice-cyan);
+            background: var(--ice-blue);
+            color: var(--main-dark);
         }
 
-        /* Modern Navigation */
+        /* Header Style */
         header {
-            background: rgba(11, 19, 43, 0.85);
-            backdrop-filter: blur(15px);
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -88,604 +84,395 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 20px;
+            padding: 15px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .logo {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
             color: var(--pure-white);
-            text-transform: uppercase;
-            letter-spacing: 1px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-shadow: 0 0 10px rgba(72, 202, 228, 0.5);
+            gap: 10px;
         }
-        .logo i { color: var(--ice-cyan); animation: spin 4s linear infinite; }
+        .logo i { color: var(--ice-blue); }
         
         nav a {
             text-decoration: none;
-            color: var(--text-gray);
-            margin: 0 18px;
+            color: var(--text-muted);
+            margin: 0 15px;
             font-weight: 700;
-            position: relative;
         }
         nav a:hover, nav a.active {
-            color: var(--ice-cyan);
-            text-shadow: 0 0 8px var(--ice-cyan);
+            color: var(--ice-blue);
         }
 
-        /* Front Row Cinematic Action Buttons (Header CTAs) */
-        .header-ctas {
-            display: flex;
-            gap: 12px;
-        }
-        .header-btn {
-            padding: 10px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .header-btn.call { background: linear-gradient(45deg, var(--neon-blue), var(--cinematic-dark)); border: 1px solid var(--ice-cyan); }
-        .header-btn.wa { background: var(--whatsapp-green); }
-        .header-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,255,255,0.1); }
-
-        /* Dramatic Hero Section */
+        /* Hero Banner */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(11, 19, 43, 0.4), rgba(11, 19, 43, 0.95)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.95)), 
                         url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            padding: 160px 20px 140px;
+            padding: 120px 20px 100px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         .hero h1 {
-            font-size: 55px;
+            font-size: 48px;
             font-weight: 900;
-            margin-bottom: 25px;
-            line-height: 1.3;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, var(--pure-white) 30%, var(--ice-cyan));
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--pure-white), var(--ice-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
         .hero p {
-            font-size: 22px;
-            color: var(--text-gray);
-            max-width: 800px;
-            margin-bottom: 45px;
-            font-weight: 300;
-        }
-        .hero-location {
-            background: rgba(72, 202, 228, 0.1);
-            border: 1px solid var(--ice-cyan);
-            padding: 6px 20px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            color: var(--ice-cyan);
-            font-weight: bold;
-            box-shadow: 0 0 15px rgba(72, 202, 228, 0.2);
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
         }
 
-        /* Front Big Floating Hero Action Buttons */
+        /* Call To Actions */
         .main-ctas {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
-            width: 100%;
-            max-width: 800px;
-            z-index: 5;
         }
-        .cta-box {
-            padding: 18px 45px;
+        .cta-btn {
+            padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             color: var(--pure-white);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 900;
             display: flex;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            letter-spacing: 0.5px;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
-        .cta-box.call { 
-            background: linear-gradient(45deg, #0077b6, var(--neon-blue)); 
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .cta-box.wa { 
-            background: linear-gradient(45deg, #1ebd54, var(--whatsapp-green)); 
-        }
-        .cta-box:hover { 
-            transform: translateY(-8px) scale(1.03); 
-            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.3);
-        }
+        .cta-btn.call { background: linear-gradient(45deg, #0284c7, #0369a1); }
+        .cta-btn.wa { background: linear-gradient(45deg, #16a34a, var(--whatsapp-color)); }
+        .cta-btn:hover { transform: translateY(-5px); }
 
-        /* Cinematic About Section with Side Image */
-        .about-section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-        .about-content { flex: 1; min-width: 300px; }
-        .about-content h2 { font-size: 40px; color: var(--ice-cyan); margin-bottom: 25px; font-weight: 900; }
-        .about-content p { color: var(--text-gray); font-size: 18px; margin-bottom: 20px; text-align: justify; }
-        
-        .about-image { 
-            flex: 1; 
-            min-width: 300px; 
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.6);
-            border: 1px solid rgba(72, 202, 228, 0.3);
-        }
-        .about-image img { width: 100%; display: block; filter: brightness(0.85) contrast(1.1); }
-        .about-image::after {
-            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
-            background: linear-gradient(to top, var(--cinematic-dark), transparent);
-        }
-
-        /* Ultra-Modern Interactive Services Grid */
-        .services {
-            background: linear-gradient(180deg, var(--cinematic-dark), var(--cinematic-blue), var(--cinematic-dark));
-            padding: 100px 20px;
+        /* Dedicated Buying Section for Old/Scrap AC */
+        .buying-section {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 80px 20px;
+            margin: 40px auto;
+            max-width: 1100px;
+            border-radius: 24px;
+            border: 2px solid var(--gold-accent);
             text-align: center;
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.1);
         }
-        .services h2 {
-            font-size: 42px;
+        .buying-section h2 {
+            font-size: 36px;
+            color: var(--gold-accent);
             margin-bottom: 15px;
             font-weight: 900;
-            letter-spacing: -1px;
         }
-        .services-subtitle {
-            color: var(--text-gray);
+        .buying-section p {
             font-size: 18px;
-            margin-bottom: 60px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #e2e8f0;
         }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
+        .features-buy {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+        .buy-item {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            font-weight: bold;
+        }
+        .buy-item i { color: var(--gold-accent); margin-left: 8px; }
+
+        /* Targeted Services Grid */
+        .services {
+            padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
+        }
+        .services h2 { font-size: 38px; margin-bottom: 10px; font-weight: 900; }
+        .services-sub { color: var(--text-muted); margin-bottom: 50px; font-size: 18px; }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
         .service-card {
-            background: rgba(28, 37, 65, 0.6);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
             text-align: right;
         }
-        .service-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--ice-cyan);
-            box-shadow: 0 20px 40px rgba(72, 202, 228, 0.15);
-        }
-        .service-img-wrapper {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-        .service-img-wrapper img {
-            width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75);
-        }
-        .service-card:hover .service-img-wrapper img {
-            transform: scale(1.1);
-            filter: brightness(0.9);
-        }
-        .service-info { padding: 30px; }
-        .service-info i {
-            font-size: 35px; color: var(--warm-gold); margin-bottom: 15px; display: inline-block;
-            text-shadow: 0 0 10px rgba(255, 183, 3, 0.4);
-        }
-        .service-info h3 { font-size: 24px; margin-bottom: 15px; font-weight: 700; color: var(--pure-white); }
-        .service-info p { color: var(--text-gray); font-size: 15px; line-height: 1.6; }
-
-        /* Cinematic Contact Form Container */
-        .contact {
-            padding: 100px 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .contact h2 { text-align: center; font-size: 40px; font-weight: 900; margin-bottom: 15px; color: var(--ice-cyan); }
-        .contact p { text-align: center; color: var(--text-gray); margin-bottom: 40px; }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--ice-blue); }
         
-        .contact-card {
-            background: rgba(28, 37, 65, 0.8);
-            padding: 45px;
-            border-radius: 24px;
-            border: 1px solid rgba(72, 202, 228, 0.1);
-            box-shadow: 0 25px 55px rgba(0,0,0,0.5);
-        }
-        .form-group { margin-bottom: 25px; }
-        .form-group label { display: block; margin-bottom: 10px; font-weight: 700; color: var(--pure-white); }
-        .form-group input, .form-group textarea {
-            width: 100%; padding: 14px 18px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; 
-            background: var(--cinematic-dark); color: white; font-size: 16px;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none; border-color: var(--ice-cyan); box-shadow: 0 0 15px rgba(72, 202, 228, 0.3);
-        }
-        .submit-btn {
-            background: linear-gradient(45deg, var(--neon-blue), #0077b6); 
-            color: white; border: none; padding: 16px; width: 100%; border-radius: 10px; 
-            font-weight: 900; cursor: pointer; font-size: 18px; text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
-        }
-        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0, 180, 216, 0.6); }
+        .img-box { height: 220px; width: 100%; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .info-box { padding: 25px; }
+        .info-box i { font-size: 30px; color: var(--ice-blue); margin-bottom: 15px; display: inline-block; }
+        .info-box h3 { font-size: 22px; margin-bottom: 12px; font-weight: 700; }
+        .info-box p { color: var(--text-muted); font-size: 15px; }
 
-        /* Premium Cinematic Footer */
-        footer {
-            background-color: #050b18; color: var(--text-gray); text-align: center; 
-            padding: 40px 20px; font-size: 15px; border-top: 1px solid rgba(255,255,255,0.05);
+        /* Booking Form */
+        .booking { padding: 60px 20px; max-width: 650px; margin: 0 auto; }
+        .booking h2 { text-align: center; font-size: 36px; margin-bottom: 30px; color: var(--ice-blue); }
+        .form-card { background: var(--card-bg); padding: 35px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+        .input-group input, .input-group textarea {
+            width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: var(--main-dark); color: white;
         }
-        footer strong { color: var(--ice-cyan); }
+        .btn-submit {
+            background: var(--neon-blue); color: white; border: none; padding: 15px; width: 100%; border-radius: 8px; font-weight: 900; font-size: 18px; cursor: pointer;
+        }
 
-        /* Fixed Mobile Action Bar */
-        .mobile-sticky-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            z-index: 999;
-            box-shadow: 0 -8px 25px rgba(0,0,0,0.5);
-        }
-        .mobile-bar-btn {
-            flex: 1;
-            text-align: center;
-            padding: 16px;
-            color: white;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-        .mobile-bar-btn.call { background: linear-gradient(to right, #0056b3, var(--neon-blue)); }
-        .mobile-bar-btn.wa { background: linear-gradient(to right, #1ebd54, var(--whatsapp-green)); }
+        /* Footer */
+        footer { background: #090d16; text-align: center; padding: 30px; font-size: 14px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
 
-        /* Left-to-Right Overrides for English Toggle */
+        /* Sticky Bottom Mobile Navigation */
+        .mobile-sticky {
+            position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 2000; box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        }
+        .mobile-btn { flex: 1; text-align: center; padding: 15px; color: white; text-decoration: none; font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .mobile-btn.call { background: #0284c7; }
+        .mobile-btn.wa { background: #16a34a; }
+
+        /* LTR Logic */
         .ltr { dir: ltr !important; text-align: left !important; }
         .ltr .nav-container, .ltr .top-bar { flex-direction: row-reverse; }
-        .ltr .service-card { text-align: left; }
-        .ltr .contact-card { text-align: left; }
-        .ltr .about-section { flex-direction: row; }
-
-        /* Keyframe Animations */
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 183, 3, 0.4); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(255, 183, 3, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 183, 3, 0); }
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        @media (max-width: 992px) {
-            .about-section { flex-direction: column-reverse; text-align: center; }
-            .about-content p { text-align: center; }
-        }
+        .ltr .service-card, .ltr .form-card { text-align: left; }
 
         @media (max-width: 768px) {
-            .header-ctas, nav { display: none; }
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 16px; }
-            .cta-box { width: 100%; justify-content: center; font-size: 18px; padding: 15px; }
-            body { padding-bottom: 60px; }
+            nav { display: none; }
+            .hero h1 { font-size: 32px; }
+            body { padding-bottom: 55px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cinematic Top Bar -->
+    <!-- Notification / Top Utilities Row -->
     <div class="top-bar">
-        <div><span class="badge-premium" id="top-tagline">⚡ صيانة فورية • جودة سينمائية • ضمان حقيقي بالدمام</span></div>
-        <button class="lang-btn" onclick="toggleLanguage()" id="lang-toggle-btn">English</button>
+        <div><span class="badge-buy" id="top-alert">💰 نشتري المكيفات المستعملة والسكراب بأفضل الأسعار بالدمام</span></div>
+        <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
     </div>
 
-    <!-- Header / Brand Row -->
+    <!-- Corporate Navbar -->
     <header>
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-snowflake"></i> 
-                <span id="logo-text">للتكييف والتبريد</span>
+                <i class="fas fa-screwdriver-wrench"></i>
+                <span id="logo-title">للتكييف والتبريد</span>
             </div>
-            <nav id="nav-links">
-                <a href="#home" class="active" id="lnk-home">الرئيسية</a>
-                <a href="#about" id="lnk-about">عن الإمبراطورية</a>
-                <a href="#services" id="lnk-services">خدماتنا النخبة</a>
-                <a href="#contact" id="lnk-contact">احجز صيانة</a>
+            <nav>
+                <a href="#home" class="active" id="m-home">الرئيسية</a>
+                <a href="#buying" id="m-buy">شراء المستعمل</a>
+                <a href="#services" id="m-serv">خدمات الصيانة</a>
+                <a href="#book" id="m-book">احجز فني</a>
             </nav>
-            <div class="header-ctas">
-                <a href="tel:+9660581366908" class="header-btn call"><i class="fas fa-phone-alt"></i> <span id="h-call">اتصل الآن</span></a>
-                <a href="https://wa.me/9660581366908" target="_blank" class="header-btn wa"><i class="fab fa-whatsapp"></i> <span id="h-wa">واتساب</span></a>
-            </div>
         </div>
     </header>
 
-    <!-- Hero Showcase Section -->
+    <!-- Main Hero Banner -->
     <section class="hero" id="home">
-        <div class="hero-location" id="hero-loc">
-            <i class="fas fa-bolt"></i> <span id="hero-loc-txt">المنطقة الشرقية - الدمام وحولها</span>
-        </div>
-        <h1 id="hero-title">عالم الصيانة الاحترافية والتكييف المطور</h1>
-        <p id="hero-desc">ندخل إلى منزلك لنصنع فارقاً حقيقياً في الأداء. نصلح أعطال التكييف المركزي، السبليت، الشباك والغسالات والمطابخ بأعلى درجات الدقة والاحترافية والسرعة الفائقة.</p>
-        
-        <!-- Big Front Screen Actions -->
+        <h1 id="h-title">صيانة مكيفات وغسالات بالدمام والمنطقة الشرقية</h1>
+        <p id="h-desc">خدمات احترافية فورية في منزلك. صيانة، تنظيف، شحن فريون، وإصلاح كافة أعطال الغسالات والمكيفات مع توفير قطع الغيار الأصلية والضمان.</p>
         <div class="main-ctas">
-            <a href="tel:+9660581366908" class="cta-box call"><i class="fas fa-phone"></i> <span id="m-call">اتصال مباشر وسريع</span></a>
-            <a href="https://wa.me/9660581366908" target="_blank" class="cta-box wa"><i class="fab fa-whatsapp"></i> <span id="m-wa">مراسلة واتساب فورية</span></a>
+            <a href="tel:+9660581366908" class="cta-btn call"><i class="fas fa-phone-alt"></i> <span id="b-call">اتصل بالصيانة</span></a>
+            <a href="https://wa.me/9660581366908" target="_blank" class="cta-btn wa"><i class="fab fa-whatsapp"></i> <span id="b-wa">تواصل عبر واتساب</span></a>
         </div>
     </section>
 
-    <!-- About Cinematic Grid Structure -->
-    <section class="about-section" id="about">
-        <div class="about-content">
-            <h2 id="about-title">من نحن وکيف نعمل؟</h2>
-            <p id="about-desc-1">نحن لسنا مجرد ورشة صيانة عادية؛ نحن فريق متكامل من المهندسين والفنيين الشغوفين بإعادة الحياة لأجهزتك المنزلية في مدينة الدمام. نستخدم أحدث التقنيات الرقمية والمعدات المتطورة لتشخيص وفحص الأعطال المعقدة في دقائق معدودة، لضمان أعلى مستويات الأمان والجودة دون إضاعة وقتك الثمين.</p>
-            <p id="about-desc-2">رؤيتنا مبنية على الأمانة الكاملة، توفير قطع غيار أصلية ومضمونة، والالتزام المطلق بالمواعيد مع تقديم أسعار عادلة وتنافسية تناسب الجميع.</p>
+    <!-- NEW SECTION: Purchase of Old / Scrap Air Conditioners -->
+    <section class="buying-section" id="buying">
+        <h2 id="buy-title">نشتري المكيفات القديمة والمستعملة (سكراب)</h2>
+        <p id="buy-desc">هل لديك مكيف قديم، عطلان، أو ترغب في استبداله؟ نحن نشتري جميع أنواع المكيفات السكراب والمستعملة (سبليت - شباك - دولابي) من أي مكان في الدمام والمنطقة الشرقية بأعلى أسعار السوق مع خدمة الفك والنقل مجاناً.</p>
+        <div class="features-buy">
+            <div class="buy-item"><i class="fas fa-check-circle"></i> <span id="bi1">تقييم عادل وسعر ممتاز</span></div>
+            <div class="buy-item"><i class="fas fa-check-circle"></i> <span id="bi2">نصلك فوراً إلى باب منزلك</span></div>
+            <div class="buy-item"><i class="fas fa-check-circle"></i> <span id="bi3">الفك والتحميل علينا بالكامل</span></div>
         </div>
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&w=600&q=80" alt="Professional Technician Working">
+        <div class="main-ctas">
+            <a href="tel:+9660581366908" class="cta-btn call" style="background: var(--gold-accent); color: black;"><i class="fas fa-dollar-sign"></i> <span id="b-sell">بيع مكيفك الآن</span></a>
         </div>
     </section>
 
-    <!-- Services Visual Section -->
+    <!-- Services Section -->
     <section class="services" id="services">
-        <h2 id="services-title">خدمات النخبة في صيانة الأجهزة</h2>
-        <p class="services-subtitle" id="services-sub">نغطي كافة احتياجات منزلك بدقة عالية وأدوات أصلية معتمدة</p>
+        <h2 id="s-title">خدماتنا المتخصصة بالدمام</h2>
+        <p class="services-subtitle" id="s-sub">نركز على تقديم أفضل جودة صيانة للمكيفات والأجهزة الأساسية</p>
         
         <div class="services-grid">
             
-            <!-- AC Repair with Real Image -->
+            <!-- Service 1: AC Washing & Maintenance -->
             <div class="service-card">
-                <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80" alt="AC Repairing Service">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="AC Repair and Washing">
                 </div>
-                <div class="service-info">
+                <div class="info-box">
                     <i class="fas fa-snowflake"></i>
-                    <h3 id="s1-t">هندسة وإصلاح التكييف</h3>
-                    <p id="s1-d">صيانة غسيل وتنظيف مكيفات سبليت وشباك، حلول تسريب الفريون والمياه، وتغيير الكومبريسور بكفاءة تبريد مضاعفة.</p>
+                    <h3 id="srv1-t">صيانة وإصلاح المكيفات</h3>
+                    <p id="srv1-d">غسيل مكيفات سبليت وشباك باستخدام مضخات المياه الحديثة، معالجة انسداد المواسير، شحن فريون أصلي، وحل مشاكل ضعف التبريد نهائياً.</p>
                 </div>
             </div>
 
-            <!-- Washing Machine with Real Image -->
+            <!-- Service 2: Smart Washing Machines -->
             <div class="service-card">
-                <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1545173168-9f18c845197a?auto=format&fit=crop&w=500&q=80" alt="Washing Machine Service">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1545173168-9f18c845197a?auto=format&fit=crop&w=600&q=80" alt="Washing Machine Repair">
                 </div>
-                <div class="service-info">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3 id="s2-t">صيانة الغسالات الذكية</h3>
-                    <p id="s2-d">إصلاح الغسالات الفوق أوتوماتيك والفل أوتوماتيك، معالجة مشاكل عدم العصر أو صرف المياه وتغيير اللوحات الإلكترونية بدقة.</p>
+                <div class="info-box">
+                    <i class="fas fa-rotate"></i>
+                    <h3 id="srv2-t">صيانة غسالات الملابس</h3>
+                    <p id="srv2-d">تصليح كافة أنواع الغسالات الأوتوماتيكية والعادية (سامسونج، ال جي، دايو وغيرها). حلول فورية لمشاكل عدم التصريف، وعدم الدوران، وتغيير قطع الغيار التالفة.</p>
                 </div>
             </div>
 
-            <!-- Refrigerator with Real Image -->
+            <!-- Service 3: AC Technical Inspections -->
             <div class="service-card">
-                <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1571175432267-efb92adba338?auto=format&fit=crop&w=500&q=80" alt="Refrigerator Repair">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&w=600&q=80" alt="AC Troubleshooting">
                 </div>
-                <div class="service-info">
-                    <i class="fas fa-ice-cream"></i>
-                    <h3 id="s3-t">إصلاح الثلاجات والفريزرات</h3>
-                    <p id="s3-d">معالجة ضعف التبريد، تراكم الثلوج، مشاكل الترموستات، وشحن فريون الثلاجات المنزلية والتجارية لضمان حفظ الأطعمة.</p>
-                </div>
-            </div>
-
-            <!-- Oven with Real Image -->
-            <div class="service-card">
-                <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Oven Repair">
-                </div>
-                <div class="service-info">
-                    <i class="fas fa-fire-alt"></i>
-                    <h3 id="s4-t">إصلاح الأفران والبوتاجازات</h3>
-                    <p id="s4-d">معالجة انسداد العيون ومشاكل تسريب الغاز، وإصلاح المفاتيح والتايمر الكهربائي لضمان أعلى معايير الأمان والسلامة في مطبخك.</p>
-                </div>
-            </div>
-
-            <!-- Water Heater with Real Image -->
-            <div class="service-card">
-                <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Water Heater Service">
-                </div>
-                <div class="service-info">
-                    <i class="fas fa-temperature-high"></i>
-                    <h3 id="s5-t">سخانات المياه المركزية والعادية</h3>
-                    <p id="s5-d">تنظيف السخانات من الترسبات الكلسية، صيانة وتغيير الهيتر (عنصر التسخين) والتأكد من سلامة الصمامات لمنع التماس الكهربائي.</p>
-                </div>
-            </div>
-
-            <!-- Vacuums with Real Image -->
-            <div class="service-card">
-                <div class="service-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=500&q=80" alt="Vacuum Cleaner Repair">
-                </div>
-                <div class="service-info">
-                    <i class="fas fa-tools"></i>
-                    <h3 id="s6-t">المكانس والأجهزة الكهربائية</h3>
-                    <p id="s6-d">فحص وتجديد قوة محركات المكانس والأجهزة الكهربائية الصغيرة لتعود إلى كفاءة المصنع الأصلية بنسبة 100%.</p>
+                <div class="info-box">
+                    <i class="fas fa-temperature-arrow-down"></i>
+                    <h3 id="srv3-t">فحص وتمديد المكيفات</h3>
+                    <p id="srv3-d">فحص الكمبروسور واللوحات الإلكترونية (البروجرام)، وتمديد مواسير النحاس للمكيفات الجديدة والقديمة بدقة متناهية تمنع تسريب الغاز مستقبلاً.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Cinematic Booking Layout -->
-    <section class="contact" id="contact">
-        <h2 id="contact-title">احجز موعد صيانة فوري</h2>
-        <p id="contact-desc">املأ النموذج أدناه وسيقوم مهندس الصيانة المختص بالتواصل معك خلال دقائق لتحديد الموعد المناسب وتجهيز المعدات اللازمة.</p>
-        
-        <div class="contact-card">
-            <form onsubmit="event.preventDefault(); alert('تم تسجيل طلبك السينمائي بنجاح! سيصلك اتصالنا فورا.');">
-                <div class="form-group">
-                    <label id="lbl-name">اسمك الكريم</label>
-                    <input type="text" required placeholder="أدخل الاسم بالكامل">
+    <!-- Quick Booking -->
+    <section class="booking" id="book">
+        <h2 id="f-title">طلب صيانة / معاينة مكيف مستعمل</h2>
+        <div class="form-card">
+            <form onsubmit="event.preventDefault(); alert('تم استلام طلبك بنجاح، نصلك قريباً جداً!');">
+                <div class="input-group">
+                    <label id="l-name">الاسم الكـريم</label>
+                    <input type="text" required>
                 </div>
-                <div class="form-group">
-                    <label id="lbl-phone">رقم الجوال الفعال</label>
+                <div class="input-group">
+                    <label id="l-phone">رقم الجوال</label>
                     <input type="tel" required placeholder="05xxxxxxxx">
                 </div>
-                <div class="form-group">
-                    <label id="lbl-msg">وصف المشكلة / نوع الجهاز بدقة</label>
-                    <textarea rows="4" placeholder="مثال: مكيف سبليت لا يبرد، أو غسالة أوتوماتيك تسرب المياه..."></textarea>
+                <div class="input-group">
+                    <label id="l-msg">حدد الخدمة المطلوبة (صيانة مكيف / غسالة / بيع مكيف مستعمل)</label>
+                    <textarea rows="4" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn" id="btn-submit">تأكيد الحجز الفوري</button>
+                <button type="submit" class="btn-submit" id="f-btn">إرسال الطلب فوراً</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p id="footer-text">© 2026 براند <strong>للتكييف والتبريد</strong> - الدمام، المملكة العربية السعودية. جميع الحقوق محفوظة.</p>
+        <p id="footer-txt">© 2026 للتكييف والتبريد - الدمام، المنطقة الشرقية، المملكة العربية السعودية. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- Dual Sticky Action Mobile Bar (Always on screen for Mobile) -->
-    <div class="mobile-sticky-bar">
-        <a href="tel:+9660581366908" class="mobile-bar-btn call"><i class="fas fa-phone-alt"></i> <span id="mob-call">اتصل الآن فوراُ</span></a>
-        <a href="https://wa.me/9660581366908" target="_blank" class="mobile-bar-btn wa"><i class="fab fa-whatsapp"></i> <span id="mob-wa">واتساب سريع</span></a>
+    <!-- Fixed Mobile Bar -->
+    <div class="mobile-sticky">
+        <a href="tel:+9660581366908" class="mobile-btn call"><i class="fas fa-phone-alt"></i> <span id="m-btn-c">اتصال</span></a>
+        <a href="https://wa.me/9660581366908" target="_blank" class="mobile-btn wa"><i class="fab fa-whatsapp"></i> <span id="m-btn-w">واتساب</span></a>
     </div>
 
-    <!-- Multi-Language Logic JavaScript -->
+    <!-- Language Translation Script -->
     <script>
         let currentLang = 'ar';
-
         const translations = {
             ar: {
-                title: "للتكييف والتبريد | عالم الصيانة الاحترافية بالدمام",
-                tagline: "⚡ صيانة فورية • جودة سينمائية • ضمان حقيقي بالدمام",
-                langBtn: "English",
-                logo: "للتكييف والتبريد",
-                home: "الرئيسية", about: "عن الإمبراطورية", services: "خدماتنا النخبة", contact: "احجز صيانة",
-                call: "اتصل الآن", wa: "واتساب",
-                heroLoc: "المنطقة الشرقية - الدمام وحولها",
-                heroTitle: "عالم الصيانة الاحترافية والتكييف المطور",
-                heroDesc: "ندخل إلى منزلك لنصنع فارقاً حقيقياً في الأداء. نصلح أعطال التكييف المركزي، السبليت، الشباك والغسالات والمطابخ بأعلى درجات الدقة والاحترافية والسرعة الفائقة.",
-                mCall: "اتصال مباشر وسريع", mWa: "مراسلة واتساب فورية",
-                aboutTitle: "من نحن وکيف نعمل؟",
-                aboutDesc1: "نحن لسنا مجرد ورشة صيانة عادية؛ نحن فريق متكامل من المهندسين والفنيين الشغوفين بإعادة الحياة لأجهزتك المنزلية في مدينة الدمام. نستخدم أحدث التقنيات الرقمية والمعدات المتطورة لتشخيص وفحص الأعطال المعقدة في دقائق معدودة، لضمان أعلى مستويات الأمان والجودة دون إضاعة وقتك الثمين.",
-                aboutDesc2: "رؤيتنا مبنية على الأمانة الكاملة، توفير قطع غيار أصلية ومضمونة، والالتزام المطلق بالمواعيد مع تقديم أسعار عادلة وتنافسية تناسب الجميع.",
-                servicesTitle: "خدمات النخبة في صيانة الأجهزة",
-                servicesSub: "نغطي كافة احتياجات منزلك بدقة عالية وأدوات أصلية معتمدة",
-                s1t: "هندسة وإصلاح التكييف", s1d: "صيانة غسيل وتنظيف مكيفات سبليت وشباك، حلول تسريب الفريون والمياه، وتغيير الكومبريسور بكفاءة تبريد مضاعفة.",
-                s2t: "صيانة الغسالات الذكية", s2d: "إصلاح الغسالات الفوق أوتوماتيك والفل أوتوماتيك، معالجة مشاكل عدم العصر أو صرف المياه وتغيير اللوحات الإلكترونية بدقة.",
-                s3t: "إصلاح الثلاجات والفريزرات", s3d: "معالجة ضعف التبريد، تراكم الثلوج، مشاكل الترموستات، وشحن فريون الثلاجات المنزلية والتجارية لضمان حفظ الأطعمة.",
-                s4t: "إصلاح الأفران والبوتاجازات", s4d: "معالجة انسداد العيون ومشاكل تسريب الغاز، وإصلاح المفاتيح والتايمر الكهربائي لضمان أعلى معايير الأمان والسلامة في مطبخك.",
-                s5t: "سخانات المياه المركزية والعادية", s5d: "تنظيف السخانات من الترسبات الكلسية، صيانة وتغيير الهيتر (عنصر التسخين) والتأكد من سلامة الصمامات لمنع التماس الكهربائي.",
-                s6t: "المكانس والأجهزة الكهربائية", s6d: "فحص وتجديد قوة محركات المكانس والأجهزة الكهربائية الصغيرة لتعود إلى كفاءة المصنع الأصلية بنسبة 100%.",
-                contactTitle: "احجز موعد صيانة فوري",
-                contactDesc: "املأ النموذج أدناه وسيقوم مهندس الصيانة المختص بالتواصل معك خلال دقائق لتحديد الموعد المناسب وتجهيز المعدات اللازمة.",
-                lblName: "اسمك الكريم", lblPhone: "رقم الجوال الفعال", lblMsg: "وصف المشكلة / نوع الجهاز بدقة", btnSubmit: "تأكيد الحجز الفوري",
-                footer: "© 2026 براند للتكييف والتبريد - الدمام، المملكة العربية السعودية. جميع الحقوق محفوظة."
+                title: "شركة صيانة مكيفات وغسالات بالدمام | شراء المكيفات المستعملة",
+                topAlert: "💰 نشتري المكيفات المستعملة والسكراب بأفضل الأسعار بالدمام",
+                langBtn: "English", logo: "للتكييف والتبريد",
+                m1: "الرئيسية", m2: "شراء المستعمل", m3: "خدمات الصيانة", m4: "احجز فني",
+                hTitle: "صيانة مكيفات وغسالات بالدمام والمنطقة الشرقية",
+                hDesc: "خدمات احترافية فورية في منزلك. صيانة، تنظيف، شحن فريون، وإصلاح كافة أعطال الغسالات والمكيفات مع توفير قطع الغيار الأصلية والضمان.",
+                bCall: "اتصل بالصيانة", bWa: "تواصل عبر واتساب",
+                buyTitle: "نشتري المكيفات القديمة والمستعملة (سكراب)",
+                buyDesc: "هل لديك مكيف قديم، عطلان، أو ترغب في استبداله؟ نحن نشتري جميع أنواع المكيفات السكراب والمستعملة (سبليت - شباك - دولابي) من أي مكان في الدمام والمنطقة الشرقية بأعلى أسعار السوق مع خدمة الفك والنقل مجاناً.",
+                bi1: "تقييم عادل وسعر ممتاز", bi2: "نصلك فوراً إلى باب منزلك", bi3: "الفك والتحميل علينا بالكامل", bSell: "بيع مكيفك الآن",
+                sTitle: "خدماتنا المتخصصة بالدمام", sSub: "نركز على تقديم أفضل جودة صيانة للمكيفات والأجهزة الأساسية",
+                srv1t: "صيانة وإصلاح المكيفات", srv1d: "غسيل مكيفات سبليت وشباك باستخدام مضخات المياه الحديثة، معالجة انسداد المواسير، شحن فريون أصلي، وحل مشاكل ضعف التبريد نهائياً.",
+                srv2t: "صيانة غسالات الملابس", srv2d: "تصليح كافة أنواع الغسالات الأوتوماتيكية والعادية (سامسونج، ال جي، دايو وغيرها). حلول فورية لمشاكل عدم التصريف، وعدم الدوران، وتغيير قطع الغيار التالفة.",
+                srv3t: "فحص وتمديد المكيفات", srv3d: "فحص الكمبروسور واللوحات الإلكترونية (البروجرام)، وتمديد مواسير النحاس للمكيفات الجديدة والقديمة بدقة متناهية تمنع تسريب الغاز مستقبلاً.",
+                fTitle: "طلب صيانة / معاينة مكيف مستعمل", lName: "الاسم الكـريم", lPhone: "رقم الجوال", lMsg: "حدد الخدمة المطلوبة (صيانة مكيف / غسالة / بيع مكيف مستعمل)", fBtn: "إرسال الطلب فوراً",
+                footer: "© 2026 للتكييف والتبريد - الدمام، المنطقة الشرقية، المملكة العربية السعودية. جميع الحقوق محفوظة.", btnC: "اتصال", btnW: "واتساب"
             },
             en: {
-                title: "AC & Refrigeration | Cinematic Repair World in Dammam",
-                tagline: "⚡ Instant Service • Cinematic Quality • Real Warranty in Dammam",
-                langBtn: "العربية",
-                logo: "AC & Refrigeration",
-                home: "Home", about: "About Empire", services: "Elite Services", contact: "Book Repair",
-                call: "Call Now", wa: "WhatsApp",
-                heroLoc: "Eastern Province - Dammam & Around",
-                heroTitle: "The Cinematic World of Professional AC Repair",
-                heroDesc: "We step into your space to engineer a massive upgrade in performance. Repairing Central ACs, Splits, Windows, Washing Machines, and premium kitchens with ultimate cinematic speed and precision.",
-                mCall: "Direct & Fast Call", mWa: "Instant WhatsApp Chat",
-                aboutTitle: "Who We Are & Our Strategy",
-                aboutDesc1: "We are not just a typical maintenance crew; we are an advanced league of engineers and technicians dedicated to reviving your home appliances in Dammam. Utilizing modern digital diagnostics, we locate complex faults in minutes to ensure maximum safety and flawless performance without wasting your luxury time.",
-                aboutDesc2: "Our core principles build on complete integrity, sourcing high-grade original spare parts, absolute punctuality, and fair pricing modeled for everyone.",
-                servicesTitle: "Elite Appliance Maintenance Services",
-                servicesSub: "Covering your entire household infrastructure with absolute precision and certified tools",
-                s1t: "AC Engineering & Repair", s1d: "Advanced washing, deep flushing, and servicing for Split/Window units. Resolving gas leakage, water dripping, and compressor restoration with extreme cooling output.",
-                s2t: "Smart Washing Machine Care", s2d: "Repairing high-end top-load and front-load models. Fixing spinning failure, drainage jams, and electronic motherboard coding with perfection.",
-                s3t: "Refrigerators & Advanced Freezers", s3d: "Resolving cooling failure, defrost errors, thermostat logic issues, and industrial Freon recharges to keep your food perfectly locked in freshness.",
-                s4t: "Premium Ovens & Stoves", s4d: "Unclogging heavy gas lines, fixing electrical timers, repairing knobs, and verifying system gas valves to match global safety parameters.",
-                s5t: "Water Heaters (Central & Regular)", s5d: "Cleaning mineral sediments, scaling removal, heater element swaps, and safety pressure valve optimization to eliminate hazard risks.",
-                s6t: "Vacuum Cleaners & Appliances", s6d: "Tuning, rewinding, and boosting suction power of premium vacuums and electronic appliances to deliver 100% factory capability.",
-                contactTitle: "Book a Cinematic Instant Visit",
-                contactDesc: "Complete the setup below, and our designated field master will reach back in minutes to lock down the schedule with prepared tools.",
-                lblName: "Your Noble Name", lblPhone: "Active Mobile Line", lblMsg: "Explain the Issue / Appliance Details", btnSubmit: "Confirm Instant Booking",
-                footer: "© 2026 Brand AC & Refrigeration - Dammam, KSA. All Rights Reserved."
+                title: "AC & Washing Machine Repair Dammam | Buy Used ACs",
+                topAlert: "💰 We Buy Used & Scrap Air Conditioners at Best Prices in Dammam",
+                langBtn: "العربية", logo: "AC & Refrigeration",
+                m1: "Home", m2: "We Buy Used AC", m3: "Our Services", m4: "Book Technician",
+                hTitle: "AC & Washing Machine Maintenance in Dammam",
+                hDesc: "Instant professional on-site home services. Repair, deep cleaning, Freon gas top-up, and troubleshooting for all washing machines and AC units with parts warranty.",
+                bCall: "Call Maintenance", bWa: "WhatsApp Chat",
+                buyTitle: "We Buy Old & Used Air Conditioners (Scrap)",
+                buyDesc: "Do you have an old, faulty, or non-working AC unit? We purchase all kinds of used and scrap ACs (Split, Window, Tower) across Dammam and the Eastern Province at the highest market value. Dismantling and pickup are 100% free.",
+                bi1: "Fair Estimation & Top Prices", bi2: "Instant Doorstep Services", bi3: "Free Dismantling & Transport", bSell: "Sell Your AC Now",
+                sTitle: "Our Specialized Dammam Services", sSub: "We prioritize exceptional repair quality for AC units and heavy home appliances",
+                srv1t: "Air Conditioner Repair & Jet Wash", srv1d: "Deep pressure washing for split and window ACs, clearing water drainage blocks, authentic Freon recharge, and ultimate cooling diagnostics.",
+                srv2t: "Washing Machine Maintenance", srv2d: "Expert fixes for all automatic and semi-automatic washers (Samsung, LG, Daewoo, etc.). Fixing spin problems, drainage system failure, and structural part replacements.",
+                srv3t: "AC Troubleshooting & Copper Piping", srv3d: "Compressor testing, PCB wiring diagnosis, and heavy-duty copper pipe installations for residential or commercial cooling systems.",
+                fTitle: "Book Repair / Inspection for Used AC", lName: "Full Name", lPhone: "Mobile Number", lMsg: "Specify Service (AC Repair / Washer / Selling Used AC)", fBtn: "Submit Request Now",
+                footer: "© 2026 AC & Refrigeration - Dammam, KSA. All Rights Reserved.", btnC: "Call", btnW: "WhatsApp"
             }
         };
 
         function toggleLanguage() {
             const htmlTag = document.getElementById('html-tag');
             const bodyTag = document.body;
+            currentLang = (currentLang === 'ar') ? 'en' : 'ar';
             
-            if (currentLang === 'ar') {
-                currentLang = 'en';
-                htmlTag.setAttribute('lang', 'en');
-                htmlTag.setAttribute('dir', 'ltr');
-                bodyTag.classList.add('ltr');
+            if (currentLang === 'en') {
+                htmlTag.setAttribute('lang', 'en'); htmlTag.setAttribute('dir', 'ltr'); bodyTag.classList.add('ltr');
             } else {
-                currentLang = 'ar';
-                htmlTag.setAttribute('lang', 'ar');
-                htmlTag.setAttribute('dir', 'rtl');
-                bodyTag.classList.remove('ltr');
+                htmlTag.setAttribute('lang', 'ar'); htmlTag.setAttribute('dir', 'rtl'); bodyTag.classList.remove('ltr');
             }
 
             const data = translations[currentLang];
-            
-            // Sync DOM Nodes with Data Dictionary
             document.title = data.title;
-            document.getElementById('top-tagline').innerText = data.tagline;
-            document.getElementById('lang-toggle-btn').innerText = data.langBtn;
-            document.getElementById('logo-text').innerText = data.logo;
-            document.getElementById('lnk-home').innerText = data.home;
-            document.getElementById('lnk-about').innerText = data.about;
-            document.getElementById('lnk-services').innerText = data.services;
-            document.getElementById('lnk-contact').innerText = data.contact;
-            document.getElementById('h-call').innerText = data.call;
-            document.getElementById('h-wa').innerText = data.wa;
-            document.getElementById('hero-loc-txt').innerText = data.heroLoc;
-            document.getElementById('hero-title').innerText = data.heroTitle;
-            document.getElementById('hero-desc').innerText = data.heroDesc;
-            document.getElementById('m-call').innerText = data.mCall;
-            document.getElementById('m-wa').innerText = data.mWa;
-            document.getElementById('about-title').innerText = data.aboutTitle;
-            document.getElementById('about-desc-1').innerText = data.aboutDesc1;
-            document.getElementById('about-desc-2').innerText = data.aboutDesc2;
-            document.getElementById('services-title').innerText = data.servicesTitle;
-            document.getElementById('services-sub').innerText = data.servicesSub;
-            
-            document.getElementById('s1-t').innerText = data.s1t; document.getElementById('s1-d').innerText = data.s1d;
-            document.getElementById('s2-t').innerText = data.s2t; document.getElementById('s2-d').innerText = data.s2d;
-            document.getElementById('s3-t').innerText = data.s3t; document.getElementById('s3-d').innerText = data.s3d;
-            document.getElementById('s4-t').innerText = data.s4t; document.getElementById('s4-d').innerText = data.s4d;
-            document.getElementById('s5-t').innerText = data.s5t; document.getElementById('s5-d').innerText = data.s5d;
-            document.getElementById('s6-t').innerText = data.s6t; document.getElementById('s6-d').innerText = data.s6d;
-
-            document.getElementById('contact-title').innerText = data.contactTitle;
-            document.getElementById('contact-desc').innerText = data.contactDesc;
-            document.getElementById('lbl-name').innerText = data.lblName;
-            document.getElementById('lbl-phone').innerText = data.lblPhone;
-            document.getElementById('lbl-msg').innerText = data.lblMsg;
-            document.getElementById('btn-submit').innerText = data.btnSubmit;
-            document.getElementById('footer-text').innerHTML = `© 2026 براند <strong>${data.logo}</strong> - الدمام، المملكة العربية السعودية. جميع الحقوق محفوظة.`;
-            document.getElementById('mob-call').innerText = data.call;
-            document.getElementById('mob-wa').innerText = data.wa;
+            document.getElementById('top-alert').innerText = data.topAlert;
+            document.getElementById('lang-btn').innerText = data.langBtn;
+            document.getElementById('logo-title').innerText = data.logo;
+            document.getElementById('m-home').innerText = data.m1;
+            document.getElementById('m-buy').innerText = data.m2;
+            document.getElementById('m-serv').innerText = data.m3;
+            document.getElementById('m-book').innerText = data.m4;
+            document.getElementById('h-title').innerText = data.hTitle;
+            document.getElementById('h-desc').innerText = data.hDesc;
+            document.getElementById('b-call').innerText = data.bCall;
+            document.getElementById('b-wa').innerText = data.bWa;
+            document.getElementById('buy-title').innerText = data.buyTitle;
+            document.getElementById('buy-desc').innerText = data.buyDesc;
+            document.getElementById('bi1').innerText = data.bi1;
+            document.getElementById('bi2').innerText = data.bi2;
+            document.getElementById('bi3').innerText = data.bi3;
+            document.getElementById('b-sell').innerText = data.bSell;
+            document.getElementById('s-title').innerText = data.sTitle;
+            document.getElementById('s-sub').innerText = data.sSub;
+            document.getElementById('srv1-t').innerText = data.srv1t; document.getElementById('srv1-d').innerText = data.srv1d;
+            document.getElementById('srv2-t').innerText = data.srv2t; document.getElementById('srv2-d').innerText = data.srv2d;
+            document.getElementById('srv3-t').innerText = data.srv3t; document.getElementById('srv3-d').innerText = data.srv3d;
+            document.getElementById('f-title').innerText = data.fTitle;
+            document.getElementById('l-name').innerText = data.lName;
+            document.getElementById('l-phone').innerText = data.lPhone;
+            document.getElementById('l-msg').innerText = data.lMsg;
+            document.getElementById('f-btn').innerText = data.fBtn;
+            document.getElementById('footer-txt').innerText = data.footer;
+            document.getElementById('m-btn-c').innerText = data.btnC;
+            document.getElementById('m-btn-w').innerText = data.btnW;
         }
     </script>
 </body>
